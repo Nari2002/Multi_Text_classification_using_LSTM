@@ -10,15 +10,15 @@ from tensorflow.keras.models import model_from_json
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # Load model architecture
-with open("C:/Users/soppoju narender/Desktop/FS-DataScience/NLP/multi_text_classification/model_architecture.json", 'r') as json_file:
+with open("model_architecture.json", 'r') as json_file:
     loaded_model_json = json_file.read()
 
 loaded_model = model_from_json(loaded_model_json)
 # Load model weights
-loaded_model.load_weights("C:/Users/soppoju narender/Desktop/FS-DataScience/NLP/multi_text_classification/multi_text_model.h5")
+loaded_model.load_weights("multi_text_model.h5")
 
 # Load tokenizer
-with open("C:/Users/soppoju narender/Desktop/FS-DataScience/NLP/multi_text_classification/tokenizer_text.pkl", 'rb') as tokenizer_file:
+with open("tokenizer_text.pkl", 'rb') as tokenizer_file:
     loaded_tokenizer = pickle.load(tokenizer_file)
 
 categories = ['Business', 'Entertainment', 'politics', 'Sports', 'Technology']    
